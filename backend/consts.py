@@ -48,3 +48,38 @@ WC_COUNTRIES = (
     ("South Korea", "KOR"),
     ("ENDGROUP", "Group H")
 )
+
+TEAM_RANKINGS = {
+    "BRAZIL": 1,
+    "ARGENTINA": 2,
+    "GERMANY": 3,
+    "SPAIN": 4,
+    "BELGIUM": 5,
+    "FRANCE": 6,
+    "PORTUGAL": 7,
+    "HOLLAND": 8,
+    "ITALY": 9,
+    "COLOMBIA": 10,
+    "ENGLAND": 11,
+    "URUGUAY": 12,
+    "CHILE": 13,
+    "RUSSIA": 14,
+    "SWITZERLAND": 15,
+    "MEXICO": 16,
+    "CROATIA": 17,
+    "ECUADOR": 18,
+    "IVORY COAST": 19,
+    "JAPAN": 20,
+    "BOSNIA AND HERZEGOVINA": 21,
+    "GHANA": 22,
+    "NIGERIA": 23,
+    "UNITED STATES OF AMERICA": 24,
+    "GREECE": 25,
+    "SOUTH KOREA": 26,
+    "CAMEROON": 27,
+    "AUSTRALIA": 28,
+    "ALGERIA": 29,
+    "IRAN": 30,
+    "HONDURAS": 31,
+    "COSTA RICA": 32
+}

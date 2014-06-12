@@ -12,7 +12,7 @@
 	<h1 class="top-heading">DUCKTOPUS PREDICTS.</h1>
 	<h3 class="second-heading">THE ORACLE KNOWS ALL</h3>
 	<div class="box-heading">THE PROPHECY HAS BEEN MADE. DUCKTOPUS HAS CHOSEN.</div>
-	<h2 class="winner-text"><span>BRAZIL</span></h2>
+	<h2 class="winner-text"><span>{{WINNER}}</span></h2>
 	<form id="select-country-form" method="post" action="{% url 'backend.views.winner' %}">
 	{% csrf_token %}
 		<table>
