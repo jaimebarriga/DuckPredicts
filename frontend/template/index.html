@@ -1,0 +1,65 @@
+{% load static from staticfiles %}
+{% load url from future %}
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}"/>
+	<link href="//fonts.googleapis.com/css?family=Maven+Pro:400,500" rel="stylesheet" type="text/css" media="all">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ducktopus Predicts</title>
+</head>
+<body>
+	<h1 class="top-heading">DUCKTOPUS PREDICTS.</h1>
+	<h3 class="second-heading">THE ORACLE KNOWS ALL</h3>
+	<div class="box-heading">WHICH TEAM DOES DUCKTOPUS PREDICT TO WIN?</div>
+	<h3 class="directions-text">Give DUCKTOPUS the options</h3>
+	<form id="select-country-form" method="post" action="{% url 'backend.views.winner' %}">
+	{% csrf_token %}
+		<table>
+			<tr>
+				<td class="center">
+					<span class="custom-dropdown custom-dropdown--white">
+						<div class="selector-wrapper">
+							<select id="team1" name="team1" class="select-duck single-option-selector">
+								{% for country, abbreviation in WC_COUNTRIES %}
+								{% if country == "GROUP" %}
+								<optgroup label="{{abbreviation}}">
+								{% elif country == "ENDGROUP" %}
+								</optgroup>
+								{% else %}
+								<option value="{{country}}" {% if country == "Brazil" %}selected{% endif %}>{{country}}</option>
+								{% endif %}
+								{% endfor %}
+							<select>
+						</div>
+					</span>
+				</td>
+				<td class="ball-td">
+					<img class="ball" src="{% static "img/BlackBall.png" %}">
+				</td>
+				<td class="center">
+					<span class="custom-dropdown custom-dropdown--white">
+						<div class="selector-wrapper">
+							<select id="team2" name="team2" class="select-duck single-option-selector">
+								{% for country, abbreviation in WC_COUNTRIES %}
+								{% if country == "GROUP" %}
+								<optgroup label="{{abbreviation}}">
+								{% elif country == "ENDGROUP" %}
+								</optgroup>
+								{% else %}
+								<option value="{{country}}" {% if country == "Croatia" %}selected{% endif %}>{{country}}</option>
+								{% endif %}
+								{% endfor %}
+							<select>
+						</div>
+					</span>
+				</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td style="text-align:center"><input type="submit" class="button"></td>
+			<td></td>
+		</table>
+	</form>
+</body>
+</html>
+

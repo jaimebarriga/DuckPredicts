@@ -1,0 +1,76 @@
+{% load static from staticfiles %}
+{% load url from future %}
+<html>
+<head>
+	<title>Ducktopus Predicts</title>
+	<link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}"/>
+	<link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,700,900' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="">
+	<div class="modal-background" id="modal-background"></div>
+	<h1 class="top-heading">DUCKTOPUS PREDICTS.</h1>
+	<h3 class="second-heading">THE ORACLE KNOWS ALL</h3>
+	<div class="box-heading">THE PROPHECY HAS BEEN MADE. DUCKTOPUS HAS CHOSEN.</div>
+	<h2 class="winner-text"><span>BRAZIL</span></h2>
+	<form id="select-country-form" method="post" action="{% url 'backend.views.winner' %}">
+	{% csrf_token %}
+		<table>
+			<tr>
+				<td class="center">
+					<span class="custom-dropdown custom-dropdown--white disabled">
+						<div class="selector-wrapper">
+							<select id="team1" name="team1" class="select-duck single-option-selector" disabled>
+								<option value="{{team1}}">{{team1}}</option>
+							<select>
+						</div>
+					</span>
+				</td>
+				<td class="ball-td">
+					<img class="ball" src="{% static "img/GoldBall.png" %}">
+				</td>
+				<td class="center">
+					<span class="custom-dropdown custom-dropdown--white disabled">
+						<div class="selector-wrapper">
+							<select id="team2" name="team2" class="select-duck single-option-selector" disabled>
+								<option value="{{team2}}">{{team2}}</option>
+							<select>
+						</div>
+					</span>
+				</td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><div id="about-ducktopus" class="button small over">ABOUT DUCKTOPUS</div></td>
+			<td style="text-align:center">Facebook Share</td>
+			<td style="text-align:right"><a href="/" class="button">PREDICT ANOTHER MATCH</a></td>
+		</table>
+	</form>
+	<div class="modal">
+		THE NON-STORY STORY
+		<br><br>
+		DUCKTOPUS is the reincarnated spirit of Paul The Octopus.
+		<br><br>
+		Born in the world of FATHERDUCK. DUCKTOPUS, was an average duck. Until he got pulled into a black hole in the ocean 4 years ago, thus, brought to year 2014 on mission to carry on the duties of Paul the Octopus, the animale oracle who rose to worldwise fame for correctly predicting the winner of several World Cup 2010 games.
+		<br>
+		<br>
+		Mystery remains over why DUCKTOPUS is half-duck, half-octopus and what means for his prophecies.
+	</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$(function(){
+	$('#about-ducktopus').on('click', function(){
+		if($('body').hasClass('modal-open')){
+			$('body').removeClass('modal-open');
+		}
+		else {
+			$('body').addClass('modal-open');
+		}
+	});
+	$('#modal-background').on('click', function(){
+		$('body').removeClass('modal-open');
+	})
+});
+</script>
+
+</body>
+</html>

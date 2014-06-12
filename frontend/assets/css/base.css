@@ -1,0 +1,241 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body, html {
+	position: relative;
+	height: 100%;
+	min-height: 100%;
+}
+
+body {
+	font-family: "Maven Pro", sans-serif;
+	background-image: url(../img/Octo-background.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center 100%;
+	padding: 30px;
+}
+
+body:before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	opacity: 0.7;
+	z-index: -1;
+}
+
+.top-heading {
+	margin: 0 0 30px 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.second-heading {
+	margin: 0 0 80px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.box-heading {
+	width: 70%;
+	display: block;
+	background-color: #000000;
+	padding: 20px;
+	margin: 0 auto;
+	color: white;
+	text-align: center;
+}
+
+.directions-text {
+	text-align: center;
+	margin: 50px 0 20px;
+}
+
+.winner-text {
+	text-align: center;
+	margin: 50px 0 16px;
+}
+
+.winner-text span {
+	padding: 0 20px;
+	border-bottom: 2px dashed #5A6FCC;
+}
+
+#select-country-form table{
+	margin: 0 auto;
+}
+
+.ball{
+	display: inline-block;
+	height: 200px;
+	width: 200px;
+	margin: 0 60px;
+}
+
+.ball-td {
+	position: relative;
+}
+
+.ball-td:before {
+	content: "VS.";
+	position: absolute;
+	top: 40%;
+	left: 45%;
+	font-size: 25px;
+	color: white;
+}
+
+/* CUSTOM DROPDOWN */
+
+.custom-dropdown__select, .single-option-selector{
+	font-size: inherit; 
+	padding: .5em; 
+	margin: 0;
+	width: 197px;
+}
+
+.custom-dropdown__select--white, .single-option-selector {
+	background-color: #fff;
+	color: #444;    
+	width: 197px;
+}
+
+.custom-dropdown__select--white.disabled, .disabled .single-option-selector{
+	background-color: rgba(255,255,255,0.7);
+}
+
+.custom-dropdown, .selector-wrapper {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px solid #000;
+	width: 200px;
+}
+
+.disabled.custom-dropdown, .disabled .selector-wrapper {
+	border-color: #888888;
+}
+
+.custom-dropdown__select, .single-option-selector {
+	padding-right: 2.5em; /* accommodate with the pseudo elements for the dropdown arrow */
+	border: 0;
+	border-radius: 3px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;    
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after,
+.selector-wrapper::before,
+.selector-wrapper::after {
+	content: "";
+	position: absolute;
+	pointer-events: none;
+}
+
+/*.custom-dropdown::after,
+.selector-wrapper::after { 
+	content: "\25BC";
+	height: 1em;
+	font-size: .625em;
+	line-height: 1;
+	right: 1.2em;
+	top: 50%; margin-top: -.5em;
+}*/
+
+/*.custom-dropdown::before,
+.selector-wrapper::before { 
+	width: 2em;
+	right: 2px; top: 0; bottom: 0;
+	border-radius: 0 3px 3px 0;
+}*/
+
+.custom-dropdown__select[disabled],
+.single-option-selector[disabled] {
+	color: rgba(0,0,0,.3);
+}
+
+/* White dropdown style */
+.custom-dropdown--white::before,
+.selector-wrapper::before {
+	top: .5em; bottom: .5em;
+	background-color: #fff;
+	border-left: 1px solid rgba(0,0,0,.1);
+}
+
+.custom-dropdown--white::after,
+.selector-wrapper::after {
+	color: rgba(0,0,0,.9);
+}
+
+.button {
+	display: inline-block;
+	background: #000; /*231f20;*/
+	border: 1px solid #080707;
+	color: white;
+	margin: 30px auto 0;
+	padding: 18px 62px;
+	font-size: 16px;
+	line-height: 18px;
+	cursor: pointer;
+	text-transform: uppercase;
+	-webkit-transition: background-color 300ms ease-out;
+	-moz-transition: background-color 300ms ease-out;
+	transition: background-color 300ms ease-out;
+}
+
+a.button, .button.small {
+	padding: 18px 10px;
+	font-size: 14px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* MODAL */
+.modal, .modal-background{
+	display: none;
+}
+
+.modal-open .modal {
+	display: block;
+	position: absolute;
+	top: 0;
+	left:0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 500px;
+	height: 300px;
+	background-color: white;
+	z-index: 15;
+	padding: 20px;
+	font-style: italic;
+	font-weight: 700;
+}
+
+.modal-open .modal-background {
+	display: block;
+	position: absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	background-color: rgba(0,0,0,0.7);
+	cursor: pointer;
+	z-index: 10;
+}
+
+.over {
+	position: relative;
+	z-index: 15;
+}
