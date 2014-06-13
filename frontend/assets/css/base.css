@@ -239,3 +239,16 @@ a.button, .button.small {
 	position: relative;
 	z-index: 15;
 }
+
+.fa {
+	font-size: 18px;
+	margin-right: 10px;
+}
+
+a {
+	color: #000000;
+}
+
+.share-heading {
+	margin-bottom: 10px;
+}
