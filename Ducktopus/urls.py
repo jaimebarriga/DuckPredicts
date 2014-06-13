@@ -12,6 +12,6 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('backend.views',
-	url('^$', 'index'),
+	url('^$', 'index', name="index"),
 	url('^winner$', 'winner')
 )

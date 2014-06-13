@@ -1,9 +1,10 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
 from consts import WC_COUNTRIES, TEAM_RANKINGS
 from django.http import HttpResponseBadRequest, \
     HttpResponseRedirect, HttpResponseServerError, HttpResponseNotFound, \
     HttpResponse
+from django.core.urlresolvers import reverse_lazy
 import pdb, random
 
 # Create your views here.
@@ -13,12 +14,13 @@ def index(request):
 	}, context_instance=RequestContext(request))
 
 def winner(request):
+	index = reverse_lazy("index")
 	try:
 		team1 = str(request.POST['team1'])
 		team2 = str(request.POST['team2'])
 		print ("%s versus %s" % (team1, team2))
 	except:
-		pass
+		return HttpResponseRedirect(index)
 
 	team1value = TEAM_RANKINGS[team1.upper()]
 	team2value = TEAM_RANKINGS[team2.upper()]

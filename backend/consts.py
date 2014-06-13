@@ -57,7 +57,7 @@ TEAM_RANKINGS = {
     "BELGIUM": 5,
     "FRANCE": 6,
     "PORTUGAL": 7,
-    "HOLLAND": 8,
+    "NETHERLANDS": 8,
     "ITALY": 9,
     "COLOMBIA": 10,
     "ENGLAND": 11,
